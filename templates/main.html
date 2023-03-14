@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
     
@@ -9,22 +10,22 @@
         <meta content="Responsive Bootstrap 4 Chat App" name="description" />
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
 
         <!-- magnific-popup css -->
-        <link href="assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" />
+        <link href="{% static 'libs/magnific-popup/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
 
         <!-- owl.carousel css -->
-        <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="{% static 'libs/owl.carousel/assets/owl.carousel.min.css' %}">
 
-        <link rel="stylesheet" href="assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{% static 'libs/owl.carousel/assets/owl.theme.default.min.css' %}">
 
         <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/bootstrap.min.css' %}" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/icons.min.css' %}" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/app.min.css' %}" id="app-style" rel="stylesheet" type="text/css" />
 
 
     </head>
@@ -40,13 +41,13 @@
                 <div class="navbar-brand-box">
                     <a href="index.html" class="logo logo-dark">
                         <span class="logo-sm">
-                            <img src="assets/images/logo.svg" alt="" height="30">
+                            <img src="{% static 'images/logo.svg' %}" alt="" height="30">
                         </span>
                     </a>
 
                     <a href="index.html" class="logo logo-light">
                         <span class="logo-sm">
-                            <img src="assets/images/logo.svg" alt="" height="30">
+                            <img src="{% static 'images/logo.svg' %}" alt="" height="30">
                         </span>
                     </a>
                 </div>
@@ -82,7 +83,7 @@
                         </li>
                         <li class="nav-item dropdown profile-user-dropdown d-inline-block d-lg-none">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="" class="profile-user rounded-circle">
+                                <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
@@ -105,7 +106,7 @@
 
                         <li class="nav-item btn-group dropup profile-user-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="assets/images/users/avatar-1.jpg" alt="" class="profile-user rounded-circle">
+                                <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
@@ -147,7 +148,7 @@
 
                             <div class="text-center p-4 border-bottom">
                                 <div class="mb-4">
-                                    <img src="assets/images/users/avatar-1.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="">
+                                    <img src="{% static 'images/users/avatar-1.jpg' %}" class="rounded-circle avatar-lg img-thumbnail" alt="">
                                 </div>
 
                                 <h5 class="font-size-16 mb-1 text-truncate">Patricia Smith</h5>
@@ -391,7 +392,7 @@
                                     <div class="item">
                                         <a href="#" class="user-status-box">
                                             <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                                <img src="assets/images/users/avatar-2.html" alt="user-img" class="img-fluid rounded-circle">
+                                                <img src="{% static 'images/users/avatar-2.html' %}" alt="user-img" class="img-fluid rounded-circle">
                                                 <span class="user-status"></span>
                                             </div>
     
@@ -401,7 +402,7 @@
                                     <div class="item">
                                         <a href="#" class="user-status-box">
                                             <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                                <img src="assets/images/users/avatar-4.jpg" alt="user-img" class="img-fluid rounded-circle">
+                                                <img src="{% static 'images/users/avatar-4.jpg' %}" alt="user-img" class="img-fluid rounded-circle">
                                                 <span class="user-status"></span>
                                             </div>
     
@@ -412,7 +413,7 @@
                                     <div class="item">
                                         <a href="#" class="user-status-box">
                                             <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                                <img src="assets/images/users/avatar-5.jpg" alt="user-img" class="img-fluid rounded-circle">
+                                                <img src="{% static 'images/users/avatar-5.jpg' %}" alt="user-img" class="img-fluid rounded-circle">
                                                 <span class="user-status"></span>
                                             </div>
     
@@ -423,7 +424,7 @@
                                     <div class="item">
                                         <a href="#" class="user-status-box">
                                             <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                                <img src="assets/images/users/avatar-6.jpg" alt="user-img" class="img-fluid rounded-circle">
+                                                <img src="{% static 'images/users/avatar-6.jpg' %}" alt="user-img" class="img-fluid rounded-circle">
                                                 <span class="user-status"></span>
                                             </div>
     
@@ -460,7 +461,7 @@
                                             <a href="#">
                                                 <div class="d-flex">                            
                                                     <div class="chat-user-img online align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-2.html" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-2.html' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                             
@@ -477,7 +478,7 @@
                                             <a href="#">
                                                 <div class="d-flex">
                                                     <div class="chat-user-img away align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-3.html" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-3.html' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="flex-grow-1 overflow-hidden">
@@ -515,7 +516,7 @@
                                             <a href="#">
                                                 <div class="d-flex">
                                                     <div class="chat-user-img online align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-4.jpg' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="flex-grow-1 overflow-hidden">
@@ -551,7 +552,7 @@
                                             <a href="#">                        
                                                 <div class="d-flex">
                                                     <div class="chat-user-img away align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-6.jpg' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="flex-grow-1 overflow-hidden">
@@ -609,7 +610,7 @@
                                             <a href="#">
                                                 <div class="d-flex">
                                                     <div class="chat-user-img away align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-7.jpg" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-7.jpg' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="flex-grow-1 overflow-hidden">
@@ -643,7 +644,7 @@
                                             <a href="#">
                                                 <div class="d-flex">
                                                     <div class="chat-user-img away align-self-center me-3 ms-0">
-                                                        <img src="assets/images/users/avatar-8.html" class="rounded-circle avatar-xs" alt="">
+                                                        <img src="{% static 'images/users/avatar-8.html' %}" class="rounded-circle avatar-xs" alt="">
                                                         <span class="user-status"></span>
                                                     </div>
                                                     <div class="flex-grow-1 overflow-hidden">
@@ -1565,7 +1566,7 @@
 
                             <div class="text-center border-bottom p-4">
                                 <div class="mb-4 profile-user">
-                                    <img src="assets/images/users/avatar-1.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="">
+                                    <img src="{% static 'images/users/avatar-1.jpg' %}" class="rounded-circle avatar-lg img-thumbnail" alt="">
                                     <button type="button" class="btn btn-light bg-light avatar-xs p-0 rounded-circle profile-photo-edit">
                                         <i class="ri-pencil-fill"></i>
                                     </button>
@@ -1792,7 +1793,7 @@
                                             <a href="javascript: void(0);" class="user-chat-remove text-muted font-size-16 p-2"><i class="ri-arrow-left-s-line"></i></a>
                                         </div>
                                         <div class="me-3 ms-0">
-                                            <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-xs" alt="">
+                                            <img src="{% static 'images/users/avatar-4.jpg' %}" class="rounded-circle avatar-xs" alt="">
                                         </div>
                                         <div class="flex-grow-1 overflow-hidden">
                                             <h5 class="font-size-16 mb-0 text-truncate"><a href="#" class="text-reset user-profile-show">Doris Brown</a> <i class="ri-record-circle-fill font-size-10 text-success d-inline-block ms-1"></i></h5>
@@ -1859,7 +1860,7 @@
                                 <li>
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-4.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-4.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -1890,7 +1891,7 @@
                                 <li class="right">
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -1929,7 +1930,7 @@
                                 <li>
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-4.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-4.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -1983,7 +1984,7 @@
                                 <li class="right">
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -2016,7 +2017,7 @@
                                 <li>
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-4.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-4.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -2026,14 +2027,14 @@
                                                     <ul class="list-inline message-img  mb-0">
                                                         <li class="list-inline-item message-img-list me-2 ms-0">
                                                             <div>
-                                                                <a class="popup-img d-inline-block m-1" href="assets/images/small/img-1.jpg" title="Project 1">
-                                                                    <img src="assets/images/small/img-1.jpg" alt="" class="rounded border">
+                                                                <a class="popup-img d-inline-block m-1" href="{% static 'images/small/img-1.jpg' %}" title="Project 1">
+                                                                    <img src="{% static 'images/small/img-1.jpg' %}" alt="" class="rounded border">
                                                                 </a>
                                                             </div>
                                                             <div class="message-img-link">
                                                                 <ul class="list-inline mb-0">
                                                                     <li class="list-inline-item">
-                                                                        <a download="img-1.jpg" href="assets/images/small/img-1.jpg" class="fw-medium">
+                                                                        <a download="img-1.jpg' %}" href="{% static 'images/small/img-1.jpg' %}" class="fw-medium">
                                                                             <i class="ri-download-2-line"></i>
                                                                         </a>
                                                                     </li>
@@ -2054,14 +2055,14 @@
 
                                                         <li class="list-inline-item message-img-list">
                                                             <div>
-                                                                <a class="popup-img d-inline-block m-1" href="assets/images/small/img-2.jpg" title="Project 2">
-                                                                    <img src="assets/images/small/img-2.jpg" alt="" class="rounded border">
+                                                                <a class="popup-img d-inline-block m-1" href="{% static 'images/small/img-2.jpg' %}" title="Project 2">
+                                                                    <img src="{% static 'images/small/img-2.jpg' %}" alt="" class="rounded border">
                                                                 </a>
                                                             </div>
                                                             <div class="message-img-link">
                                                                 <ul class="list-inline mb-0">
                                                                     <li class="list-inline-item">
-                                                                        <a download="img-2.jpg" href="assets/images/small/img-2.jpg" class="fw-medium">
+                                                                        <a download="img-2.jpg" href="{% static 'images/small/img-2.jpg' %}" class="fw-medium">
                                                                             <i class="ri-download-2-line"></i>
                                                                         </a>                                                                        
                                                                     </li>
@@ -2106,7 +2107,7 @@
                                 <li class="right">
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-1.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
                                         </div>
     
                                         <div class="user-chat-content">
@@ -2129,7 +2130,7 @@
                                                             <div class="ms-4 me-0">
                                                                 <div class="d-flex gap-2 font-size-20 d-flex align-items-start">
                                                                     <div>
-                                                                        <a download="admin_v1.0.zip" href="assets/images/small/admin_v1.0.html" class="fw-medium">
+                                                                        <a download="admin_v1.0.zip" href="{% static 'images/small/admin_v1.0.html' %}" class="fw-medium">
                                                                             <i class="ri-download-2-line"></i>
                                                                         </a> 
                                                                     </div>
@@ -2173,7 +2174,7 @@
                                 <li>
                                     <div class="conversation-list">
                                         <div class="chat-avatar">
-                                            <img src="assets/images/users/avatar-4.jpg" alt="">
+                                            <img src="{% static 'images/users/avatar-4.jpg' %}" alt="">
                                         </div>
                                         
                                         <div class="user-chat-content">
@@ -2248,7 +2249,7 @@
 
                         <div class="text-center p-4 border-bottom">
                             <div class="mb-4">
-                                <img src="assets/images/users/avatar-4.jpg" class="rounded-circle avatar-lg img-thumbnail" alt="">
+                                <img src="{% static 'images/users/avatar-4.jpg' %}" class="rounded-circle avatar-lg img-thumbnail" alt="">
                             </div>
 
                             <h5 class="font-size-16 mb-1 text-truncate">Doris Brown</h5>
@@ -2473,7 +2474,7 @@
                         <div class="modal-body">
                             <div class="text-center p-4">
                                 <div class="avatar-lg mx-auto mb-4">
-                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="img-thumbnail rounded-circle">
+                                    <img src="{% static 'images/users/avatar-4.jpg' %}" alt="" class="img-thumbnail rounded-circle">
                                 </div>
 
                                 <h5 class="text-truncate">Doris Brown</h5>
@@ -2511,7 +2512,7 @@
                         <div class="modal-body">
                             <div class="text-center p-4">
                                 <div class="avatar-lg mx-auto mb-4">
-                                    <img src="assets/images/users/avatar-4.jpg" alt="" class="img-thumbnail rounded-circle">
+                                    <img src="{% static 'images/users/avatar-4.jpg' %}" alt="" class="img-thumbnail rounded-circle">
                                 </div>
 
                                 <h5 class="text-truncate">Doris Brown</h5>
@@ -2545,21 +2546,21 @@
         <!-- end  layout wrapper -->
 
         <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
+        <script src="{% static 'libs/jquery/jquery.min.js' %}"></script>
+        <script src="{% static 'libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'libs/simplebar/simplebar.min.js' %}"></script>
+        <script src="{% static 'libs/node-waves/waves.min.js' %}"></script>
 
         <!-- Magnific Popup-->
-        <script src="assets/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="{% static 'libs/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
 
         <!-- owl.carousel js -->
-        <script src="assets/libs/owl.carousel/owl.carousel.min.js"></script>
+        <script src="{% static 'libs/owl.carousel/owl.carousel.min.js' %}"></script>
 
         <!-- page init -->
-        <script src="assets/js/pages/index.init.js"></script>
+        <script src="{% static 'js/pages/index.init.js' %}"></script>
 
-        <script src="assets/js/app.js"></script>
+        <script src="{% static 'js/app.js' %}"></script>
 
     </body>
 
