@@ -34,7 +34,9 @@ else:
 
 AUTH_USER_MODEL = 'accounts.User'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.43.21'
+]
 
 CSRF_TRUSTED_ORIGINS = [
     'https://jerit-baiju-literate-guacamole-w4pqjgwqjq6h5xv7-8000.preview.app.github.dev']
