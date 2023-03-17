@@ -36,6 +36,8 @@ AUTH_USER_MODEL = 'accounts.User'
 
 ALLOWED_HOSTS = []
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://jerit-baiju-literate-guacamole-w4pqjgwqjq6h5xv7-8000.preview.app.github.dev']
 
 # Application definition
 
