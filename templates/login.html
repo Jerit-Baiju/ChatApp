@@ -45,7 +45,7 @@
                             <div class="card-body p-4">
                                 <div class="p-3">
                                     <form action="." method="post">
-    
+                                        {% csrf_token %}
                                         <div class="mb-3">
                                             <label class="form-label">E-mail</label>
                                             <div class="input-group mb-3 bg-soft-light rounded-3">
