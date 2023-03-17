@@ -39,7 +39,9 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jerit-baiju-literate-guacamole-w4pqjgwqjq6h5xv7-8000.preview.app.github.dev']
+    'https://jerit-baiju-literate-guacamole-w4pqjgwqjq6h5xv7-8000.preview.app.github.dev',
+    'https://192.168.43.21'
+    ]
 
 # Application definition
 

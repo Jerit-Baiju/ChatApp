@@ -37,7 +37,36 @@ def login_page(request):
 
 
 def register_page(request):
-    return render(request, 'register.html')
+    if request.user.is_authenticated:
+        return redirect('index')
+    if request.method == 'POST':
+        name = request.POST['name'].lstrip().rstrip()
+        email = request.POST['email']
+        password = request.POST['password1']
+        confirm = request.POST['password2']
+        name_split = name.split(' ')
+        if len(name_split) <= 1:
+            return HttpResponse(request, 'Please enter your full name.')
+        first_name = name.split()[0].capitalize()
+        last_name = name.split()[1].capitalize()
+        if password == confirm:
+            if User.objects.filter(email=email).exists():
+                return HttpResponse(request, 'Email already exists.')
+            user = User.objects.create_user(
+                email=email, password=password, first_name=first_name, last_name=last_name)
+            user.save()
+            login(request, user)
+            try:
+                url = request.POST.get('next')
+                cache.clear()
+                return redirect(url)
+            except:
+                cache.clear()
+                return redirect('index')
+        else:
+            return HttpResponse(request, 'Passwords does not match.')
+    else:
+        return render(request, 'register.html', {'title': 'Register | Jerit Baiju'})
 
 
 def logout_page(request):
