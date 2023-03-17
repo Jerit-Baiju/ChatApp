@@ -1,7 +1,8 @@
-from django.contrib import messages
+# from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 # from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 from .models import User
@@ -18,11 +19,8 @@ def login_page(request):
         try:
             user = User.objects.get(email=email)
         except:
-            messages.error(request, 'User does not exist')
-            context = {
-                'navbar': False
-            }
-            return render(request, 'accounts/login.html', context)
+            return HttpResponse('User does not exist')
+            # return render(request, 'login.html')
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
@@ -34,15 +32,8 @@ def login_page(request):
                 cache.clear()
                 return redirect('home')
         else:
-            messages.error(request, 'Username OR password does not exit')
-            context = {
-                'navbar': False
-            }
-            return render(request, 'accounts/login.html', context)
-    context = {
-        'navbar': False
-    }
-    return render(request, 'accounts/login.html', context)
+            return HttpResponse( 'Username OR password does not exit')
+    return render(request, 'login.html')
 
 
 def register_page(request):
