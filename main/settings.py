@@ -35,7 +35,9 @@ else:
 AUTH_USER_MODEL = 'accounts.User'
 
 ALLOWED_HOSTS = [
-    '192.168.43.21'
+    '192.168.43.21',
+    '127.0.0.1',
+    'test.jerit.ml'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
