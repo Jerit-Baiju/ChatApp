@@ -12,7 +12,7 @@ from .models import User
 
 def login_page(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('index')
     if request.method == 'POST':
         email = request.POST.get('email').lower()
         password = request.POST.get('password')
@@ -30,7 +30,7 @@ def login_page(request):
                 return redirect(url)
             except:
                 cache.clear()
-                return redirect('home')
+                return redirect('index')
         else:
             return HttpResponse( 'Username OR password does not exit')
     return render(request, 'login.html')
