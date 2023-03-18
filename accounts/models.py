@@ -41,10 +41,11 @@ class User(AbstractUser):
     avatar = models.ImageField(
         null=True, default="user.png", upload_to='Avatars')
     email = models.EmailField(unique=True)
-    name = models.CharField(max_length=200)
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
     objects = UserManager()
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.email
+        return f"{self.first_name} {self.last_name}"
