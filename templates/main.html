@@ -83,7 +83,7 @@
                         </li>
                         <li class="nav-item dropdown profile-user-dropdown d-inline-block d-lg-none">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
+                                <img src="{{request.user.avatar.url}}" alt="" class="profile-user rounded-circle">
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
@@ -106,7 +106,7 @@
 
                         <li class="nav-item btn-group dropup profile-user-dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
+                                <img src="{{request.user.avatar.url}}" alt="" class="profile-user rounded-circle">
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#">Profile <i class="ri-profile-line float-end text-muted"></i></a>
@@ -148,7 +148,7 @@
 
                             <div class="text-center p-4 border-bottom">
                                 <div class="mb-4">
-                                    <img src="{% static 'images/users/avatar-1.jpg' %}" class="rounded-circle avatar-lg img-thumbnail" alt="">
+                                    <img src="{{request.user.avatar.url}}" class="rounded-circle avatar-lg img-thumbnail" alt="">
                                 </div>
 
                                 <h5 class="font-size-16 mb-1 text-truncate">{{request.user}}</h5>
@@ -1566,7 +1566,7 @@
 
                             <div class="text-center border-bottom p-4">
                                 <div class="mb-4 profile-user">
-                                    <img src="{% static 'images/users/avatar-1.jpg' %}" class="rounded-circle avatar-lg img-thumbnail" alt="">
+                                    <img src="{{request.user.avatar.url}}" class="rounded-circle avatar-lg img-thumbnail" alt="">
                                     <button type="button" class="btn btn-light bg-light avatar-xs p-0 rounded-circle profile-photo-edit">
                                         <i class="ri-pencil-fill"></i>
                                     </button>
