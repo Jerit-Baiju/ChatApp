@@ -37,11 +37,12 @@ AUTH_USER_MODEL = 'accounts.User'
 ALLOWED_HOSTS = [
     '192.168.43.21',
     '127.0.0.1',
-    'test.jerit.ml'
+    'test.jerit.ml',
+    'localhost'
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://jerit-baiju-literate-guacamole-w4pqjgwqjq6h5xv7-8000.preview.app.github.dev',
+    'https://jerit-baiju-upgraded-enigma-qxj5gpw5jjvfx6x9-8000.preview.app.github.dev',
     'https://192.168.43.21',
     'https://test.jerit.ml'
     ]
@@ -146,6 +147,10 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_URL = "/media/"
+
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
