@@ -11,10 +11,19 @@ def get_contacts(request):
             contacts.append(contact)
     return contacts
 
+def sort_contacts_names(request):
+    contacts = get_contacts(request)
+    names = []
+    for contact in contacts:
+        names.append(contact.user.all([1]))
+
 @login_required(login_url='login_page')
 def index(request):
     conversations = []
     contacts = get_contacts(request)
+    sorted_contacts = []
+    for contact in contacts:
+        contact.users.all()
     for conversation in contacts:
         other_user = conversation.users.all()[1]
         name = other_user
@@ -25,6 +34,7 @@ def index(request):
     context = {
         'conversations': conversations
     }
+    print(sorted_contacts)
     return render(request, 'main.html', context)
 
 
