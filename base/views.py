@@ -5,12 +5,27 @@ from .models import Conversation
 
 # Create your views here.
 
+
 @login_required(login_url='login_page')
 def index(request):
+    conversations = []
+    for conversation in Conversation.objects.all():
+        name = conversation.users.all()[1]
+        message = conversation.messages.all()[0].content
+        conversations.append({'name': name, 'message': message, 'id': conversation.id})
     context = {
-        'conversations': Conversation.objects.all()
+        'conversations': conversations
     }
     return render(request, 'main.html', context)
 
+
 def chat(request, id):
-    return HttpResponse(id)
+    conversations = []
+    for conversation in Conversation.objects.all():
+        name = conversation.users.all()[1]
+        message = conversation.messages.all()[0].content
+        conversations.append({'name': name, 'message': message, 'id': conversation.id})
+    context = {
+        'conversations': conversations
+    }
+    return render(request, 'main.html',  context)
