@@ -16,7 +16,7 @@ def index(request):
     context = {
         'conversations': conversations
     }
-    return render(request, 'index.html', context)
+    return render(request, 'main.html', context)
 
 
 def chat(request, id):
@@ -28,13 +28,4 @@ def chat(request, id):
     context = {
         'conversations': conversations
     }
-    return render(request, 'chat.html',  context)
-
-
-def contacts_page(request):
-    return render(request, 'contacts.html')
-
-
-def test_page(request):
-    return render(request, 'test.html')
-
+    return render(request, 'main.html',  context)
