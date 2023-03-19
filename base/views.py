@@ -25,7 +25,6 @@ def index(request):
     context = {
         'conversations': conversations
     }
-    print(context)
     return render(request, 'main.html', context)
 
 

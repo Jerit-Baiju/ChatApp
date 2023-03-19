@@ -72,4 +72,4 @@ def register_page(request):
 def logout_page(request):
     logout(request)
     cache.clear()
-    return redirect('home')
+    return HttpResponse('ok')
