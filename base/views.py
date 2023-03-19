@@ -16,8 +16,9 @@ def index(request):
     conversations = []
     contacts = get_contacts(request)
     for conversation in contacts:
-        name = conversation.users.all()[1]
-        image = conversation.users.all()[1].avatar
+        other_user = conversation.users.all()[1]
+        name = other_user
+        image = other_user.avatar
         message = conversation.messages.all()[0].content
         time = conversation.messages.all()[0].created_at
         conversations.append({'name': name, 'image': image, 'message': message, 'id': conversation.id, 'time': time, 'contacts': contacts})
