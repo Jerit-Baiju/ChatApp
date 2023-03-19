@@ -4,16 +4,23 @@ from .models import Conversation
 
 # Create your views here.
 
+def get_contacts(request):
+    contacts = []
+    for contact in Conversation.objects.all():
+        if request.user in contact.users.all():
+            contacts.append(contact)
+    return contacts
 
 @login_required(login_url='login_page')
 def index(request):
     conversations = []
-    for conversation in Conversation.objects.all():
+    contacts = get_contacts(request)
+    for conversation in contacts:
         name = conversation.users.all()[1]
         image = conversation.users.all()[1].avatar
         message = conversation.messages.all()[0].content
         time = conversation.messages.all()[0].created_at
-        conversations.append({'name': name, 'image': image, 'message': message, 'id': conversation.id, 'time': time})
+        conversations.append({'name': name, 'image': image, 'message': message, 'id': conversation.id, 'time': time, 'contacts': contacts})
     context = {
         'conversations': conversations
     }
