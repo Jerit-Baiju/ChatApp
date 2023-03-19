@@ -50,8 +50,6 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'channels'
-
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -61,6 +59,8 @@ INSTALLED_APPS = [
 
     "base.apps.BaseConfig",
     "accounts.apps.AccountsConfig",
+    
+    'channels'
 ]
 
 MIDDLEWARE = [
@@ -95,6 +95,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "main.wsgi.application"
 ASGI_APPLICATION = "main.asgi.application"
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'asgi_redis.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('localhost', 6379)],
+        },
+        'ROUTING': 'example_channels.routing.channel_routing',
+    }
+}
 
 
 # Database

@@ -86,7 +86,7 @@
                     <li class="nav-item dropdown profile-user-dropdown d-inline-block d-lg-none">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
+                            <img src="{{request.user.avatar.url}}" alt="" class="profile-user rounded-circle">
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Profile <i
@@ -114,7 +114,7 @@
                     <li class="nav-item btn-group dropup profile-user-dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <img src="{% static 'images/users/avatar-1.jpg' %}" alt="" class="profile-user rounded-circle">
+                            <img src="{{request.user.avatar.url}}" alt="" class="profile-user rounded-circle">
                         </a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Profile <i
@@ -160,11 +160,11 @@
 
                         <div class="text-center p-4 border-bottom">
                             <div class="mb-4">
-                                <img src="{% static 'images/users/avatar-1.jpg' %}"
+                                <img src="{{request.user.avatar.url}}"
                                     class="rounded-circle avatar-lg img-thumbnail" alt="">
                             </div>
 
-                            <h5 class="font-size-16 mb-1 text-truncate">Patricia Smith</h5>
+                            <h5 class="font-size-16 mb-1 text-truncate">{{request.user}}</h5>
                             <p class="text-muted text-truncate mb-1"><i
                                     class="ri-record-circle-fill font-size-10 text-success me-1 ms-0 d-inline-block"></i>
                                 Active</p>
@@ -196,12 +196,12 @@
                                         <div class="accordion-body">
                                             <div>
                                                 <p class="text-muted mb-1">Name</p>
-                                                <h5 class="font-size-14">Patricia Smith</h5>
+                                                <h5 class="font-size-14">{{request.user}}</h5>
                                             </div>
 
                                             <div class="mt-4">
                                                 <p class="text-muted mb-1">Email</p>
-                                                <h5 class="font-size-14">adc@123.com</h5>
+                                                <h5 class="font-size-14">{{request.user.email}}</h5>
                                             </div>
 
                                             <div class="mt-4">
@@ -428,66 +428,20 @@
                         <div class="px-4 pb-4" dir="ltr">
 
                             <div class="owl-carousel owl-theme" id="user-status-carousel">
-                                <div class="item">
+                            {% for contact in conversations %}
+                            	<div class="item">
                                     <a href="#" class="user-status-box">
                                         <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                            <img src="{% static 'images/users/avatar-2.html' %}" alt="user-img"
+                                            <img src="{{contact.image.url}}" alt="user-img"
                                                 class="img-fluid rounded-circle">
                                             <span class="user-status"></span>
                                         </div>
 
-                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">Patrick</h5>
+                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">{{contact.first_name}}</h5>
                                     </a>
                                 </div>
-                                <div class="item">
-                                    <a href="#" class="user-status-box">
-                                        <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                            <img src="{% static 'images/users/avatar-4.jpg' %}" alt="user-img"
-                                                class="img-fluid rounded-circle">
-                                            <span class="user-status"></span>
-                                        </div>
-
-                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">Doris</h5>
-                                    </a>
-                                </div>
-
-                                <div class="item">
-                                    <a href="#" class="user-status-box">
-                                        <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                            <img src="{% static 'images/users/avatar-5.jpg' %}" alt="user-img"
-                                                class="img-fluid rounded-circle">
-                                            <span class="user-status"></span>
-                                        </div>
-
-                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">Emily</h5>
-                                    </a>
-                                </div>
-
-                                <div class="item">
-                                    <a href="#" class="user-status-box">
-                                        <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                            <img src="{% static 'images/users/avatar-6.jpg' %}" alt="user-img"
-                                                class="img-fluid rounded-circle">
-                                            <span class="user-status"></span>
-                                        </div>
-
-                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">Steve</h5>
-                                    </a>
-                                </div>
-
-                                <div class="item">
-                                    <a href="#" class="user-status-box">
-                                        <div class="avatar-xs mx-auto d-block chat-user-img online">
-                                            <span class="avatar-title rounded-circle bg-soft-primary text-primary">
-                                                T
-                                            </span>
-                                            <span class="user-status"></span>
-                                        </div>
-
-                                        <h5 class="font-size-13 text-truncate mt-3 mb-1">Teresa</h5>
-                                    </a>
-                                </div>
-
+                            {% endfor %}
+                                
                             </div>
                             <!-- end user status carousel -->
                         </div>
@@ -1149,7 +1103,7 @@
 
                         <div class="text-center border-bottom p-4">
                             <div class="mb-4 profile-user">
-                                <img src="{% static 'images/users/avatar-1.jpg' %}"
+                                <img src="{{request.user.avatar.url}}"
                                     class="rounded-circle avatar-lg img-thumbnail" alt="">
                                 <button type="button"
                                     class="btn btn-light bg-light avatar-xs p-0 rounded-circle profile-photo-edit">
@@ -1157,7 +1111,7 @@
                                 </button>
                             </div>
 
-                            <h5 class="font-size-16 mb-1 text-truncate">Patricia Smith</h5>
+                            <h5 class="font-size-16 mb-1 text-truncate">{{request.user}}</h5>
                             <div class="dropdown d-inline-block mb-1">
                                 <a class="text-muted dropdown-toggle pb-1 d-block" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1193,12 +1147,12 @@
 
                                             <div>
                                                 <p class="text-muted mb-1">Name</p>
-                                                <h5 class="font-size-14">Patricia Smith</h5>
+                                                <h5 class="font-size-14">{{request.user}}</h5>
                                             </div>
 
                                             <div class="mt-4">
                                                 <p class="text-muted mb-1">Email</p>
-                                                <h5 class="font-size-14">adc@123.com</h5>
+                                                <h5 class="font-size-14">{{request.user.email}}</h5>
                                             </div>
 
                                             <div class="mt-4">
@@ -1533,7 +1487,7 @@
                             <li class="right">
                                 <div class="conversation-list">
                                     <div class="chat-avatar">
-                                        <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
+                                        <img src="{{request.user.avatar.url}}" alt="">
                                     </div>
 
                                     <div class="user-chat-content">
@@ -1565,7 +1519,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="conversation-name">Patricia Smith</div>
+                                        <div class="conversation-name">{{request.user}}</div>
                                     </div>
                                 </div>
                             </li>
@@ -1647,7 +1601,7 @@
                             <li class="right">
                                 <div class="conversation-list">
                                     <div class="chat-avatar">
-                                        <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
+                                        <img src="{{request.user.avatar.url}}" alt="">
                                     </div>
 
                                     <div class="user-chat-content">
@@ -1678,7 +1632,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="conversation-name">Patricia Smith</div>
+                                        <div class="conversation-name">{{request.user}}</div>
                                     </div>
 
                                 </div>
@@ -1804,7 +1758,7 @@
                             <li class="right">
                                 <div class="conversation-list">
                                     <div class="chat-avatar">
-                                        <img src="{% static 'images/users/avatar-1.jpg' %}" alt="">
+                                        <img src="{{request.user.avatar.url}}" alt="">
                                     </div>
 
                                     <div class="user-chat-content">
@@ -1879,7 +1833,7 @@
 
                                         </div>
 
-                                        <div class="conversation-name">Patricia Smith</div>
+                                        <div class="conversation-name">{{request.user}}</div>
                                     </div>
 
                                 </div>
