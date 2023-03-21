@@ -32,17 +32,21 @@ def index(request):
     context = {
         'conversations': conversations,
     }
-    print(sorted_contacts)
     return render(request, 'main.html', context)
 
 
 def chat(request, id):
     conversations = []
-    for conversation in Conversation.objects.all():
-        name = conversation.users.all()[1]
+    contacts = get_contacts(request)
+    sorted_contacts = []
+    for conversation in contacts:
+        other_user = conversation.users.exclude(id=request.user.id).first()
+        name = other_user
+        image = other_user.avatar
         message = conversation.messages.all()[0].content
-        conversations.append({'name': name, 'message': message, 'id': conversation.id})
+        time = conversation.messages.all()[0].created_at
+        conversations.append({'name': name, 'first_name': other_user.first_name, 'image': image, 'message': message, 'id': conversation.id, 'time': time})
     context = {
-        'conversations': conversations
+        'conversations': conversations,
     }
-    return render(request, 'main.html',  context)
+    return render(request, 'main.html', context)
